@@ -1,0 +1,33 @@
+.landing-background {
+    height: 100px;
+    background-image: url('../assets/background.jpg'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  @media (max-width: 1200px) {
+    .landing-background {
+      background-position: top ; /* Adjust position for smaller screens */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .landing-background {
+      background-position: top ;
+      background-size: cover;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .landing-background {
+      height: auto; /* Allow content to dictate height on very small devices */
+      padding: 2rem 1rem; /* Add padding for smaller screens */
+    }
+  }
+  
