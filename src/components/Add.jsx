@@ -8,7 +8,7 @@ const Add = ({setAddResponseFromHome}) => {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     const [productDetails,setProductDetails]=useState({
-        caption:"",imgUrl:"",price:""
+        caption:"",imgUrl:"",price:"",description:""
     })
     console.log(productDetails);
       
@@ -39,10 +39,19 @@ const Add = ({setAddResponseFromHome}) => {
       }
     return (
         <>
-            <div className='d-flex align-items-center '>
-                <h5>Upload New Product Details</h5>
-                <button onClick={handleShow} className='btn btn-dark  ms-3 rounded-circle fw-bolder fs-5 '>+</button>
-            </div>
+<div className='d-flex justify-content-between align-items-center mb-4'>
+  <button 
+    onClick={handleShow} 
+    className='btn btn-dark d-flex align-items-center fw-bolder fs-5 ms-3 px-3' 
+    style={{ borderRadius: '8px', height: '40px' }}
+  >
+    <i className="fa-solid fa-plus text-white me-2"></i>
+    <span className='me-2'>Upload New Product</span>
+
+  </button>
+</div>
+
+
             {/* modal */}
             <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false}>
                 <Modal.Header closeButton>
@@ -55,6 +64,9 @@ const Add = ({setAddResponseFromHome}) => {
                         </FloatingLabel>
                         <FloatingLabel className='mt-2' controlId="floatingUrl" label=" Image URL">
                             <Form.Control onChange={e=>setProductDetails({...productDetails,imgUrl:e.target.value})} type="text" placeholder="Image URL" />
+                        </FloatingLabel>
+                        <FloatingLabel className='mt-2' controlId="floatingLink" label=" Description">
+                            <Form.Control onChange={e=>setProductDetails({...productDetails,description:e.target.value})} type="text"  placeholder=" Product description " />
                         </FloatingLabel>
                         <FloatingLabel className='mt-2' controlId="floatingLink" label=" ₹ Price">
                             <Form.Control onChange={e=>setProductDetails({...productDetails,price:e.target.value})} type="number"  placeholder=" ₹ Price" />

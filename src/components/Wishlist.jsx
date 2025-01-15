@@ -87,11 +87,20 @@ const Wishlist = ({deleteResponseFromView,setDeleteResponseFromWishlist}) => {
 
   return (
     <>
-      <div className='d-flex justify-content-between align-items-center mb-4'>
-        <h3>Wishlist</h3>
-        <button onClick={handleShow} className='btn btn-dark ms-3 rounded-circle fw-bolder fs-5'>+</button>
+    <div className='d-flex justify-content-between align-items-center mb-4'>
+  <button 
+    onClick={handleShow} 
+    className='btn btn-dark d-flex align-items-center fw-bolder fs-5 ms-3 px-3' 
+    style={{ borderRadius: '8px', height: '40px' }}
+  >
+    <i className="fa-solid fa-plus text-white me-2"></i>
+    <span className='me-2'>Wishlist</span>
 
-      </div>
+  </button>
+</div>
+
+
+
       {/* displaying all categories */}
       <div className='container-fluid mb-3'>
         {/* single category view */}
